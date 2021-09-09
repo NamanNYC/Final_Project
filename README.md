@@ -2,7 +2,14 @@
 # Final_Project - Predicting Forest Fires
 
 ## Reason for our topic:
-The reason for our choice of Predicting Forest Fires was due to many cases of forest fires occurring that show up in the news, specifically in the Alberta province. We came to an agreement on this topic by utilizing the online collabortive service called Miro to research different topics, what data is available for those topics and ultimately vote on a topic that we all mutually agreed to be the best topic to work with, which concluded in us choosing to predict forest fires in Alberta.  
+The reason for our choice of Predicting Forest Fires was due to many cases of forest fires occurring that show up in the news, specifically in the Alberta province. We came to an agreement on this topic by utilizing the online collabortive service called Miro to research different topics, what data is available for those topics and ultimately vote on a topic that we all mutually agreed to be the best topic to work with, which concluded in us choosing to predict forest fires in Alberta. 
+
+## Description of source of data:
+The data that we managed to research and ultimately decided to use is one from Wildfire Alberta. They have a total of 4 datasets on wildfires ranging all the way from 1961 to the latest file recorded in 2018. The file that we opted to use is from 2006 to 2018 with 19845 rows and 39 columns. The dataset includes crucial information such as fire size, the date it was detected, location of the fire, origin, as well as other information such as fire type, weather conditions over fire, fuel type, and more. 
+
+## Questions to answer:
+- can we predict the size of the next fire?
+- to what level of accuracy can we predict the size of fire?
 
 # Provisional Mock Machine Learning Model
 
