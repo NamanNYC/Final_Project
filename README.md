@@ -1,6 +1,9 @@
 
 # Final_Project - Predicting Forest Fires
 
+## Reason for our topic:
+The reason for our choice of Predicting Forest Fires was due to many cases of forest fires occurring that show up in the news, specifically in the Alberta province. We came to an agreement on this topic by utilizing the online collabortive service called Miro to research different topics, what data is available for those topics and ultimately vote on a topic that we all mutually agreed to be the best topic to work with, which concluded in us choosing to predict forest fires in Alberta.  
+
 # Provisional Mock Machine Learning Model
 
 ## Machine Learning Model: 
