@@ -1,0 +1,2 @@
+dbpassword = 'lmptdatagroup'
+awspassword = 'lmptdatagroup'
