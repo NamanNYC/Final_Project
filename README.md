@@ -27,7 +27,7 @@ Datasource:
 - https://wildfire.alberta.ca/resources/historical-data/historical-wildfire-database.aspx
 
 ERD:
-- ![](Images/ERD.png)
+![](Images/ERD.png)
 
 Description:
 - The raw data contained a number of feature columns.
