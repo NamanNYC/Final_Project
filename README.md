@@ -1,4 +1,3 @@
-
 # Final_Project - Predicting Forest Fires
 
 ## Reason for our topic:
