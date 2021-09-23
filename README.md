@@ -10,13 +10,17 @@ The data that we managed to research and ultimately decided to use is one from W
 - can we predict the size of the next fire?
 - to what level of accuracy can we predict the size of fire?
 
-# Provisional Mock Machine Learning Model
+# Machine Learning Model
 
-## Machine Learning Model: 
-Based on the data, the mock machine learning model is looking at predicting the change from the starting fire size and the discovered fire size by the number of days it took for the fire to grow. Essentially in the real world, we would like to find out if there is a relationship between the number of days that have passed from the start of the fire to when it was discovered with the growth of the fire size before it has been classified as being under control. Wild fires have been increasingly devastating in many countries over the years. If we could build an accurate model, this could potentially provide a crucial time period of when a fire could be under control. 
+## Mock Machine Learning Model: 
+Based on the data, the mock machine learning model is looking at predicting the change from the starting fire size and the discovered fire size by the number of days it took for the fire to grow. Essentially in the real world, we would like to find out if there is a relationship between the number of days that have passed from the start of the fire to when it was discovered with the growth of the fire size before it has been classified as being under control. Wild fires have been increasingly devastating in many countries over the years. If we could build an accurate model, this could potentially provide a crucial time period of when a fire could be under control.
+
+## Final Machine Learning Model:
+
 
 ## Reason for Model Choice
-As the data used for the features and output contains continous data, Linear Regression has been chosen to test the sample data.
+For the mock model, as the data used for the features and output contains continous data, Linear Regression was chosen to test the data. We want to look at whether the some of the features from the data (indepedent variables) affect the growth of the fire (dependent variable) so by using a simple model with a few features. Linear regression models are great for prediction based on independent variables. 
+Feature engineering will be required in order to use some of the other categorical data, allowing the model to be used for classification models once the intial linear model has been tested. 
 
 
 ## Project Planning
