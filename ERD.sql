@@ -67,7 +67,7 @@ CREATE TABLE "extra" (
     "fire_year" int   NOT NULL,
     "calendar_year" int   NOT NULL,
     "assessment_datetime" date   NOT NULL,
-    "assessment_hectares" size   NOT NULL,
+    "assessment_hectares" float   NOT NULL,
     "current_Size" float   NOT NULL,
     "size_class" varchar   NOT NULL,
     "fire_origin" varchar   NOT NULL,
@@ -108,6 +108,7 @@ CREATE TABLE "initial_action_by" (
      )
 );
 
+-- Free plan table limit reached. SUBSCRIBE for more.
 
 
 
@@ -121,16 +122,16 @@ ALTER TABLE "detection" ADD CONSTRAINT "fk_Detection_det_agent" FOREIGN KEY("det
 REFERENCES "det_agent" ("det_agent");
 
 ALTER TABLE "labels" ADD CONSTRAINT "fk_Labels_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Cause" ("fire_number");
+REFERENCES "cause" ("fire_number");
 
 ALTER TABLE "labels" ADD CONSTRAINT "fk_Labels_fuel_type" FOREIGN KEY("fuel_type")
 REFERENCES "fuel_type" ("fuel_Type");
 
 ALTER TABLE "loc" ADD CONSTRAINT "fk_Loc_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Detection" ("fire_number");
+REFERENCES "detection" ("fire_number");
 
 ALTER TABLE "response" ADD CONSTRAINT "fk_Response_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Detection" ("fire_number");
+REFERENCES "detection" ("fire_number");
 
 ALTER TABLE "response" ADD CONSTRAINT "fk_Response_initial_action_by" FOREIGN KEY("initial_action_by")
 REFERENCES "initial_action_by" ("initial_action_by");
