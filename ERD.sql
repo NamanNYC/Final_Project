@@ -2,7 +2,7 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE "Cause" (
+CREATE TABLE "cause" (
     "fire_number" int   NOT NULL,
     "responsible_group_desc" str   NOT NULL,
     "activity_class" str   NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE "Cause" (
      )
 );
 
-CREATE TABLE "Detection" (
+CREATE TABLE "detection" (
     "fire_number" int   NOT NULL,
     "industry_identifier_desc" str   NOT NULL,
     "det_agent_Type" str   NOT NULL,
@@ -26,7 +26,7 @@ CREATE TABLE "Detection" (
      )
 );
 
-CREATE TABLE "Labels" (
+CREATE TABLE "labels" (
     "fire_number" int   NOT NULL,
     "fire_type" str   NOT NULL,
     "fire_position_on_slope" str   NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE "Labels" (
      )
 );
 
-CREATE TABLE "Loc" (
+CREATE TABLE "loc" (
     "fire_number" int   NOT NULL,
     "fire_location_latitude" double   NOT NULL,
     "fire_location_longitude" double   NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE "Loc" (
      )
 );
 
-CREATE TABLE "Response" (
+CREATE TABLE "response" (
     "fire_number" int   NOT NULL,
     "start_for_fire_date" date   NOT NULL,
     "fire_fighting_start_size" double   NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE "Response" (
      )
 );
 
-CREATE TABLE "Extra" (
+CREATE TABLE "extra" (
     "fire_number" int   NOT NULL,
     "fire_name" str   NOT NULL,
     "fire_year" int   NOT NULL,
@@ -112,41 +112,33 @@ CREATE TABLE "initial_action_by" (
 
 
 
-ALTER TABLE "Cause" ADD CONSTRAINT "fk_Cause_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Detection" ("fire_number");
+ALTER TABLE "cause" ADD CONSTRAINT "fk_Cause_fire_number" FOREIGN KEY("fire_number")
+REFERENCES "detection" ("fire_number");
 
-ALTER TABLE "Detection" ADD CONSTRAINT "fk_Detection_det_agent_Type" FOREIGN KEY("det_agent_Type")
+ALTER TABLE "detection" ADD CONSTRAINT "fk_Detection_det_agent_Type" FOREIGN KEY("det_agent_Type")
 REFERENCES "det_agent_type" ("det_agent_type");
 
-ALTER TABLE "Detection" ADD CONSTRAINT "fk_Detection_det_agent" FOREIGN KEY("det_agent")
+ALTER TABLE "detection" ADD CONSTRAINT "fk_Detection_det_agent" FOREIGN KEY("det_agent")
 REFERENCES "det_agent" ("det_agent");
 
-ALTER TABLE "Labels" ADD CONSTRAINT "fk_Labels_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "labels" ADD CONSTRAINT "fk_Labels_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "Cause" ("fire_number");
 
-ALTER TABLE "Labels" ADD CONSTRAINT "fk_Labels_fuel_type" FOREIGN KEY("fuel_type")
+ALTER TABLE "labels" ADD CONSTRAINT "fk_Labels_fuel_type" FOREIGN KEY("fuel_type")
 REFERENCES "fuel_type" ("fuel_Type");
 
-ALTER TABLE "Loc" ADD CONSTRAINT "fk_Loc_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "loc" ADD CONSTRAINT "fk_Loc_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "Detection" ("fire_number");
 
-ALTER TABLE "Response" ADD CONSTRAINT "fk_Response_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "response" ADD CONSTRAINT "fk_Response_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "Detection" ("fire_number");
 
-ALTER TABLE "Response" ADD CONSTRAINT "fk_Response_initial_action_by" FOREIGN KEY("initial_action_by")
+ALTER TABLE "response" ADD CONSTRAINT "fk_Response_initial_action_by" FOREIGN KEY("initial_action_by")
 REFERENCES "initial_action_by" ("initial_action_by");
 
-ALTER TABLE "Extra" ADD CONSTRAINT "fk_Extra_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Cause" ("fire_number");
+ALTER TABLE "extra" ADD CONSTRAINT "fk_Extra_fire_number" FOREIGN KEY("fire_number")
+REFERENCES "cause" ("fire_number");
 
-ALTER TABLE "Extra" ADD CONSTRAINT "fk_Extra_size_class" FOREIGN KEY("size_class")
-REFERENCES "Table 11" ("...");
-
--- Free plan table limit reached. SUBSCRIBE for more.
-
-
-
--- Free plan table limit reached. SUBSCRIBE for more.
 
 
 
