@@ -9,7 +9,7 @@ CREATE TABLE "cause" (
     "true_cause" varchar ,
     "permit_detail_desc" varchar ,
     "fire_start_date" date ,
-    CONSTRAINT "pk_Cause" PRIMARY KEY (
+    CONSTRAINT "pk_cause" PRIMARY KEY (
         "fire_number"
      )
 );
@@ -21,7 +21,7 @@ CREATE TABLE "detection" (
     "det_agent" varchar ,
     "discovered_date" date ,
     "reported_date" date ,
-    CONSTRAINT "pk_Detection" PRIMARY KEY (
+    CONSTRAINT "pk_detection" PRIMARY KEY (
         "fire_number"
      )
 );
@@ -33,7 +33,7 @@ CREATE TABLE "labels" (
     "weather_conditions_over_fire" varchar ,
     "fuel_type" varchar ,
     "other_fuel_type" varchar ,
-    CONSTRAINT "pk_Labels" PRIMARY KEY (
+    CONSTRAINT "pk_labels" PRIMARY KEY (
         "fire_number"
      )
 );
@@ -42,7 +42,7 @@ CREATE TABLE "loc" (
     "fire_number" int ,
     "fire_location_latitude" float ,
     "fire_location_longitude" float ,
-    CONSTRAINT "pk_Loc" PRIMARY KEY (
+    CONSTRAINT "pk_loc" PRIMARY KEY (
         "fire_number"
      )
 );
@@ -56,7 +56,7 @@ CREATE TABLE "response" (
     "bh_hectares" float ,
     "uc_fs_date" date ,
     "uc_hectares" float ,
-    CONSTRAINT "pk_Response" PRIMARY KEY (
+    CONSTRAINT "pk_response" PRIMARY KEY (
         "fire_number"
      )
 );
@@ -71,7 +71,7 @@ CREATE TABLE "extra" (
     "current_Size" float ,
     "size_class" varchar ,
     "fire_origin" varchar ,
-    CONSTRAINT "pk_Extra" PRIMARY KEY (
+    CONSTRAINT "pk_extra" PRIMARY KEY (
         "fire_number"
      )
 );
@@ -112,31 +112,31 @@ CREATE TABLE "initial_action_by" (
 
 
 
-ALTER TABLE "cause" ADD CONSTRAINT "fk_Cause_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "cause" ADD CONSTRAINT "fk_cause_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "detection" ("fire_number");
 
-ALTER TABLE "detection" ADD CONSTRAINT "fk_Detection_det_agent_Type" FOREIGN KEY("det_agent_Type")
+ALTER TABLE "detection" ADD CONSTRAINT "fk_detection_det_agent_Type" FOREIGN KEY("det_agent_Type")
 REFERENCES "det_agent_type" ("det_agent_type");
 
-ALTER TABLE "detection" ADD CONSTRAINT "fk_Detection_det_agent" FOREIGN KEY("det_agent")
+ALTER TABLE "detection" ADD CONSTRAINT "fk_detection_det_agent" FOREIGN KEY("det_agent")
 REFERENCES "det_agent" ("det_agent");
 
-ALTER TABLE "labels" ADD CONSTRAINT "fk_Labels_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "labels" ADD CONSTRAINT "fk_labels_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "cause" ("fire_number");
 
-ALTER TABLE "labels" ADD CONSTRAINT "fk_Labels_fuel_type" FOREIGN KEY("fuel_type")
+ALTER TABLE "labels" ADD CONSTRAINT "fk_labels_fuel_type" FOREIGN KEY("fuel_type")
 REFERENCES "fuel_type" ("fuel_Type");
 
-ALTER TABLE "loc" ADD CONSTRAINT "fk_Loc_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "loc" ADD CONSTRAINT "fk_loc_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "detection" ("fire_number");
 
-ALTER TABLE "response" ADD CONSTRAINT "fk_Response_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "response" ADD CONSTRAINT "fk_response_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "detection" ("fire_number");
 
-ALTER TABLE "response" ADD CONSTRAINT "fk_Response_initial_action_by" FOREIGN KEY("initial_action_by")
+ALTER TABLE "response" ADD CONSTRAINT "fk_response_initial_action_by" FOREIGN KEY("initial_action_by")
 REFERENCES "initial_action_by" ("initial_action_by");
 
-ALTER TABLE "extra" ADD CONSTRAINT "fk_Extra_fire_number" FOREIGN KEY("fire_number")
+ALTER TABLE "extra" ADD CONSTRAINT "fk_extra_fire_number" FOREIGN KEY("fire_number")
 REFERENCES "cause" ("fire_number");
 
 
