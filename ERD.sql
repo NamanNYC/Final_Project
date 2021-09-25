@@ -3,106 +3,106 @@
 
 
 CREATE TABLE "cause" (
-    "fire_number" int   NOT NULL,
-    "responsible_group_desc" varchar   NOT NULL,
-    "activity_class" varchar   NOT NULL,
-    "true_cause" varchar   NOT NULL,
-    "permit_detail_desc" varchar   NOT NULL,
-    "fire_start_date" date   NOT NULL,
+    "fire_number" int ,
+    "responsible_group_desc" varchar ,
+    "activity_class" varchar ,
+    "true_cause" varchar ,
+    "permit_detail_desc" varchar ,
+    "fire_start_date" date ,
     CONSTRAINT "pk_Cause" PRIMARY KEY (
         "fire_number"
      )
 );
 
 CREATE TABLE "detection" (
-    "fire_number" int   NOT NULL,
-    "industry_identifier_desc" varchar   NOT NULL,
-    "det_agent_Type" varchar   NOT NULL,
-    "det_agent" varchar   NOT NULL,
-    "discovered_date" date   NOT NULL,
-    "reported_date" date   NOT NULL,
+    "fire_number" int ,
+    "industry_identifier_desc" varchar ,
+    "det_agent_Type" varchar ,
+    "det_agent" varchar ,
+    "discovered_date" date ,
+    "reported_date" date ,
     CONSTRAINT "pk_Detection" PRIMARY KEY (
         "fire_number"
      )
 );
 
 CREATE TABLE "labels" (
-    "fire_number" int   NOT NULL,
-    "fire_type" varchar   NOT NULL,
-    "fire_position_on_slope" varchar   NOT NULL,
-    "weather_conditions_over_fire" varchar   NOT NULL,
-    "fuel_type" varchar   NOT NULL,
-    "other_fuel_type" varchar   NOT NULL,
+    "fire_number" int ,
+    "fire_type" varchar ,
+    "fire_position_on_slope" varchar ,
+    "weather_conditions_over_fire" varchar ,
+    "fuel_type" varchar ,
+    "other_fuel_type" varchar ,
     CONSTRAINT "pk_Labels" PRIMARY KEY (
         "fire_number"
      )
 );
 
 CREATE TABLE "loc" (
-    "fire_number" int   NOT NULL,
-    "fire_location_latitude" float   NOT NULL,
-    "fire_location_longitude" float   NOT NULL,
+    "fire_number" int ,
+    "fire_location_latitude" float ,
+    "fire_location_longitude" float ,
     CONSTRAINT "pk_Loc" PRIMARY KEY (
         "fire_number"
      )
 );
 
 CREATE TABLE "response" (
-    "fire_number" int   NOT NULL,
-    "start_for_fire_date" date   NOT NULL,
-    "fire_fighting_start_size" float   NOT NULL,
-    "initial_action_by" varchar   NOT NULL,
-    "bh_fs_date" date   NOT NULL,
-    "bh_hectares" float   NOT NULL,
-    "uc_fs_date" date   NOT NULL,
-    "uc_hectares" float   NOT NULL,
+    "fire_number" int ,
+    "start_for_fire_date" date ,
+    "fire_fighting_start_size" float ,
+    "initial_action_by" varchar ,
+    "bh_fs_date" date ,
+    "bh_hectares" float ,
+    "uc_fs_date" date ,
+    "uc_hectares" float ,
     CONSTRAINT "pk_Response" PRIMARY KEY (
         "fire_number"
      )
 );
 
 CREATE TABLE "extra" (
-    "fire_number" int   NOT NULL,
-    "fire_name" varchar   NOT NULL,
-    "fire_year" int   NOT NULL,
-    "calendar_year" int   NOT NULL,
-    "assessment_datetime" date   NOT NULL,
-    "assessment_hectares" float   NOT NULL,
-    "current_Size" float   NOT NULL,
-    "size_class" varchar   NOT NULL,
-    "fire_origin" varchar   NOT NULL,
+    "fire_number" int ,
+    "fire_name" varchar ,
+    "fire_year" int ,
+    "calendar_year" int ,
+    "assessment_datetime" date ,
+    "assessment_hectares" float ,
+    "current_Size" float ,
+    "size_class" varchar ,
+    "fire_origin" varchar ,
     CONSTRAINT "pk_Extra" PRIMARY KEY (
         "fire_number"
      )
 );
 
 CREATE TABLE "det_agent" (
-    "det_agent" varchar   NOT NULL,
-    "description" varchar   NOT NULL,
+    "det_agent" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_det_agent" PRIMARY KEY (
         "det_agent"
      )
 );
 
 CREATE TABLE "det_agent_type" (
-    "det_agent_type" varchar   NOT NULL,
-    "description" varchar   NOT NULL,
+    "det_agent_type" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_det_agent_type" PRIMARY KEY (
         "det_agent_type"
      )
 );
 
 CREATE TABLE "fuel_type" (
-    "fuel_Type" varchar   NOT NULL,
-    "description" varchar   NOT NULL,
+    "fuel_Type" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_fuel_type" PRIMARY KEY (
         "fuel_Type"
      )
 );
 
 CREATE TABLE "initial_action_by" (
-    "initial_action_by" varchar   NOT NULL,
-    "description" varchar   NOT NULL,
+    "initial_action_by" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_initial_action_by" PRIMARY KEY (
         "initial_action_by"
      )
