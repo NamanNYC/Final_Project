@@ -2,107 +2,107 @@
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
 
 
-CREATE TABLE "Cause" (
-    "fire_number" int   NOT NULL,
-    "responsible_group_desc" str   NOT NULL,
-    "activity_class" str   NOT NULL,
-    "true_cause" str   NOT NULL,
-    "permit_detail_desc" str   NOT NULL,
-    "fire_start_date" date   NOT NULL,
-    CONSTRAINT "pk_Cause" PRIMARY KEY (
+CREATE TABLE "cause" (
+    "fire_number" int ,
+    "responsible_group_desc" varchar ,
+    "activity_class" varchar ,
+    "true_cause" varchar ,
+    "permit_detail_desc" varchar ,
+    "fire_start_date" date ,
+    CONSTRAINT "pk_cause" PRIMARY KEY (
         "fire_number"
      )
 );
 
-CREATE TABLE "Detection" (
-    "fire_number" int   NOT NULL,
-    "industry_identifier_desc" str   NOT NULL,
-    "det_agent_Type" str   NOT NULL,
-    "det_agent" str   NOT NULL,
-    "discovered_date" date   NOT NULL,
-    "reported_date" date   NOT NULL,
-    CONSTRAINT "pk_Detection" PRIMARY KEY (
+CREATE TABLE "detection" (
+    "fire_number" int ,
+    "industry_identifier_desc" varchar ,
+    "det_agent_Type" varchar ,
+    "det_agent" varchar ,
+    "discovered_date" date ,
+    "reported_date" date ,
+    CONSTRAINT "pk_detection" PRIMARY KEY (
         "fire_number"
      )
 );
 
-CREATE TABLE "Labels" (
-    "fire_number" int   NOT NULL,
-    "fire_type" str   NOT NULL,
-    "fire_position_on_slope" str   NOT NULL,
-    "weather_conditions_over_fire" str   NOT NULL,
-    "fuel_type" str   NOT NULL,
-    "other_fuel_type" str   NOT NULL,
-    CONSTRAINT "pk_Labels" PRIMARY KEY (
+CREATE TABLE "labels" (
+    "fire_number" int ,
+    "fire_type" varchar ,
+    "fire_position_on_slope" varchar ,
+    "weather_conditions_over_fire" varchar ,
+    "fuel_type" varchar ,
+    "other_fuel_type" varchar ,
+    CONSTRAINT "pk_labels" PRIMARY KEY (
         "fire_number"
      )
 );
 
-CREATE TABLE "Loc" (
-    "fire_number" int   NOT NULL,
-    "fire_location_latitude" double   NOT NULL,
-    "fire_location_longitude" double   NOT NULL,
-    CONSTRAINT "pk_Loc" PRIMARY KEY (
+CREATE TABLE "loc" (
+    "fire_number" int ,
+    "fire_location_latitude" float ,
+    "fire_location_longitude" float ,
+    CONSTRAINT "pk_loc" PRIMARY KEY (
         "fire_number"
      )
 );
 
-CREATE TABLE "Response" (
-    "fire_number" int   NOT NULL,
-    "start_for_fire_date" date   NOT NULL,
-    "fire_fighting_start_size" double   NOT NULL,
-    "initial_action_by" str   NOT NULL,
-    "bh_fs_date" date   NOT NULL,
-    "bh_hectares" double   NOT NULL,
-    "uc_fs_date" date   NOT NULL,
-    "uc_hectares" double   NOT NULL,
-    CONSTRAINT "pk_Response" PRIMARY KEY (
+CREATE TABLE "response" (
+    "fire_number" int ,
+    "start_for_fire_date" date ,
+    "fire_fighting_start_size" float ,
+    "initial_action_by" varchar ,
+    "bh_fs_date" date ,
+    "bh_hectares" float ,
+    "uc_fs_date" date ,
+    "uc_hectares" float ,
+    CONSTRAINT "pk_response" PRIMARY KEY (
         "fire_number"
      )
 );
 
-CREATE TABLE "Extra" (
-    "fire_number" int   NOT NULL,
-    "fire_name" str   NOT NULL,
-    "fire_year" int   NOT NULL,
-    "calendar_year" int   NOT NULL,
-    "assessment_datetime" date   NOT NULL,
-    "assessment_hectares" size   NOT NULL,
-    "current_Size" double   NOT NULL,
-    "size_class" str   NOT NULL,
-    "fire_origin" str   NOT NULL,
-    CONSTRAINT "pk_Extra" PRIMARY KEY (
+CREATE TABLE "extra" (
+    "fire_number" int ,
+    "fire_name" varchar ,
+    "fire_year" int ,
+    "calendar_year" int ,
+    "assessment_datetime" date ,
+    "assessment_hectares" float ,
+    "current_Size" float ,
+    "size_class" varchar ,
+    "fire_origin" varchar ,
+    CONSTRAINT "pk_extra" PRIMARY KEY (
         "fire_number"
      )
 );
 
 CREATE TABLE "det_agent" (
-    "det_agent" str   NOT NULL,
-    "description" str   NOT NULL,
+    "det_agent" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_det_agent" PRIMARY KEY (
         "det_agent"
      )
 );
 
 CREATE TABLE "det_agent_type" (
-    "det_agent_type" str   NOT NULL,
-    "description" str   NOT NULL,
+    "det_agent_type" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_det_agent_type" PRIMARY KEY (
         "det_agent_type"
      )
 );
 
 CREATE TABLE "fuel_type" (
-    "fuel_Type" str   NOT NULL,
-    "description" str   NOT NULL,
+    "fuel_Type" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_fuel_type" PRIMARY KEY (
         "fuel_Type"
      )
 );
 
 CREATE TABLE "initial_action_by" (
-    "initial_action_by" str   NOT NULL,
-    "description" str   NOT NULL,
+    "initial_action_by" varchar ,
+    "description" varchar ,
     CONSTRAINT "pk_initial_action_by" PRIMARY KEY (
         "initial_action_by"
      )
@@ -112,41 +112,33 @@ CREATE TABLE "initial_action_by" (
 
 
 
-ALTER TABLE "Cause" ADD CONSTRAINT "fk_Cause_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Detection" ("fire_number");
+ALTER TABLE "cause" ADD CONSTRAINT "fk_cause_fire_number" FOREIGN KEY("fire_number")
+REFERENCES "detection" ("fire_number");
 
-ALTER TABLE "Detection" ADD CONSTRAINT "fk_Detection_det_agent_Type" FOREIGN KEY("det_agent_Type")
+ALTER TABLE "detection" ADD CONSTRAINT "fk_detection_det_agent_Type" FOREIGN KEY("det_agent_Type")
 REFERENCES "det_agent_type" ("det_agent_type");
 
-ALTER TABLE "Detection" ADD CONSTRAINT "fk_Detection_det_agent" FOREIGN KEY("det_agent")
+ALTER TABLE "detection" ADD CONSTRAINT "fk_detection_det_agent" FOREIGN KEY("det_agent")
 REFERENCES "det_agent" ("det_agent");
 
-ALTER TABLE "Labels" ADD CONSTRAINT "fk_Labels_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Cause" ("fire_number");
+ALTER TABLE "labels" ADD CONSTRAINT "fk_labels_fire_number" FOREIGN KEY("fire_number")
+REFERENCES "cause" ("fire_number");
 
-ALTER TABLE "Labels" ADD CONSTRAINT "fk_Labels_fuel_type" FOREIGN KEY("fuel_type")
+ALTER TABLE "labels" ADD CONSTRAINT "fk_labels_fuel_type" FOREIGN KEY("fuel_type")
 REFERENCES "fuel_type" ("fuel_Type");
 
-ALTER TABLE "Loc" ADD CONSTRAINT "fk_Loc_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Detection" ("fire_number");
+ALTER TABLE "loc" ADD CONSTRAINT "fk_loc_fire_number" FOREIGN KEY("fire_number")
+REFERENCES "detection" ("fire_number");
 
-ALTER TABLE "Response" ADD CONSTRAINT "fk_Response_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Detection" ("fire_number");
+ALTER TABLE "response" ADD CONSTRAINT "fk_response_fire_number" FOREIGN KEY("fire_number")
+REFERENCES "detection" ("fire_number");
 
-ALTER TABLE "Response" ADD CONSTRAINT "fk_Response_initial_action_by" FOREIGN KEY("initial_action_by")
+ALTER TABLE "response" ADD CONSTRAINT "fk_response_initial_action_by" FOREIGN KEY("initial_action_by")
 REFERENCES "initial_action_by" ("initial_action_by");
 
-ALTER TABLE "Extra" ADD CONSTRAINT "fk_Extra_fire_number" FOREIGN KEY("fire_number")
-REFERENCES "Cause" ("fire_number");
+ALTER TABLE "extra" ADD CONSTRAINT "fk_extra_fire_number" FOREIGN KEY("fire_number")
+REFERENCES "cause" ("fire_number");
 
-ALTER TABLE "Extra" ADD CONSTRAINT "fk_Extra_size_class" FOREIGN KEY("size_class")
-REFERENCES "Table 11" ("...");
-
--- Free plan table limit reached. SUBSCRIBE for more.
-
-
-
--- Free plan table limit reached. SUBSCRIBE for more.
 
 
 
