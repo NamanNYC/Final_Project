@@ -11,7 +11,7 @@ from flask_cors import CORS
 from config import password
 
 # Set Up Database
-host = "lmpt-finalproject.coke2w4vs8wf.us-east-2.rds.amazonaws.com/"
+host = "lmpt-finalproject.coke2w4vs8wf.us-east-2.rds.amazonaws.com"
 engine = create_engine(f"postgresql://postgres:{password}@{host}:5432/postgres")
 connection = engine.connect()
 
@@ -19,13 +19,14 @@ connection = engine.connect()
 app = Flask(__name__)
 CORS(app)
 
+
 # Create Flask Routes
-@app.route("/api/v1.0/test")
-def test():
+@app.route("/api/v1.0/fires_2006to2018")
+def fires_2006to2018():
     # import SQL table as pandas dataframe
-    test_df = pd.read_sql('select * from cause', connection)
+    fires_2006to2018_df = pd.read_sql('select count(true_cause), true_cause from cause group by true_cause', connection)
     
     # convert pandas dataframe to json
-    test_json = json.dumps(test_df.to_dict('test'))
+    fires_2006to2018_json = json.dumps(fires_2006to2018_df.to_dict('fires_2006to2018'))
     
-    return test_json
+    return fires_2006to2018_json
