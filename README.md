@@ -1,4 +1,6 @@
 # Final_Project - Predicting Forest Fires
+![Planning-for-wildfires-in-Alberta](https://user-images.githubusercontent.com/81877387/134839166-811be96c-c391-43e1-9e17-f7eeb712fa40.gif)
+
 
 ## Reason for our topic:
 The reason for our choice of Predicting Forest Fires was due to many cases of forest fires occurring that show up in the news, specifically in the Alberta province. We came to an agreement on this topic by utilizing the online collabortive service called Miro to research different topics, what data is available for those topics and ultimately vote on a topic that we all mutually agreed to be the best topic to work with, which concluded in us choosing to predict forest fires in Alberta. 
@@ -72,4 +74,4 @@ Description:
 The way that our team has agreed to communicate is by utilizing Slack as the base of our communication (ex. need any immediate help, quick question, clarification on a topic, conduct a quick virtual call, etc.). We also agreed to conduct virtual meetings on designated days and times in order to ensure everyone is on the same page, and everyone remains on the same page. 
 
 ## Google Slides Presentation Link
-
+https://docs.google.com/presentation/d/117F7IS3yFacNfmIY9zos-4fqOf8Ne2q4_9VZze44nqo/edit#slide=id.g1f96f5393d_0_25
