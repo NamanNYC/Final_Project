@@ -10,13 +10,42 @@ The data that we managed to research and ultimately decided to use is one from W
 - can we predict the size of the next fire?
 - to what level of accuracy can we predict the size of fire?
 
-# Provisional Mock Machine Learning Model
+# Machine Learning Model
 
-## Machine Learning Model: 
-Based on the data, the mock machine learning model is looking at predicting the change from the starting fire size and the discovered fire size by the number of days it took for the fire to grow. Essentially in the real world, we would like to find out if there is a relationship between the number of days that have passed from the start of the fire to when it was discovered with the growth of the fire size before it has been classified as being under control. Wild fires have been increasingly devastating in many countries over the years. If we could build an accurate model, this could potentially provide a crucial time period of when a fire could be under control. 
+The machine learning model looked at predicting the growth of a wild fire. Wild fires have been increasingly devastating in many countries over the years. If we could build an accurate model, this may potentially provide a crucial time period of when a fire could be under control by being able to predict the growth of a wild fire. 
+
+# Mock Machine Learning Model & Data Preprocessing
+To build the final model, a mock model was built to test the data set prior to setting up the RDS. 4 data sets in csv files dating from 1983 to 2018 was available. Upon reviewing the data only data from 2006 - 2018 was used due to the different data frame information in prior files containing different information which was determined to be irrelevant for the model. 
+Inspecting the data, we acknowledege the vast amount of rows and potential features that could be used, including a large amount of null value data and data which seemed to not be relevant based on using the data dictionary to help understand the data set. 
+Deciding on the relevant features to use, we acknowledge the large amounts of continous and categorical data available. Due to a larger amount of feature enginneering needed for the final model, a few selected continous features were chosen to run the mock model. The dependent variable being the fire growth in size and the independent variables being the features chosen. For the mock model, the features used were the burning 'hours' (new column created by subtracting the fire start date & the discovered date); the size of the fire when the fire fighting began & the size of the hectares when the fire was under control. 
 
 ## Reason for Model Choice
-As the data used for the features and output contains continous data, Linear Regression has been chosen to test the sample data.
+Linear Regression was chosen for the mock & final model. Regression analysis was chosen as we are looking to find if there is a linear relationship between the chosen features and our dependent variable (fire growth). Regression analysis is also versatile and has a wide applicability, which will be required for the final model when added categorical features to model along with the continous features. Linear regression is also beneficial is it's simplicity and interpretability of the data. However we acknowledge that using this model, we can only consider linear relationships in our data set which in real world data, it is rarely linearly separable. Using this model, we also have to limit the number of dependent variables. 
+
+## Feature Engineering & Feature Selection
+The initial features engineering that was completed included:
+* Removing numbers to identify ignition area (which was later decided to be dropped in the final dataframe)
+* Creating the month of when the fire was discovered
+* Converting strings to dates for start fire fighting date & fire held date (bh_fs_date)
+* Calculating the number of days the fire was held before being under control
+* Creating a fire growth size column
+* Review and clean up categorical features in order to use classification machine models (encoded these features) 
+
+Once feature engineering was completed, the team reviewed the features and decided on the final features that were deemed to be most important to be used for the model. As a team we also decided not to add too many features to the model incase the model was particularly sensitive. In the mock model, the accuracy results did not show an accurate model (less than 75% accuracy).
+
+The features chosen were: 
+* Calendar year
+* Fire fighting start size
+* Difference in hours (from start of fire fighting time to fire controlled time)
+* Weather conditions over fire
+* True Cause of fire 
+* Fire Growth (y feature)
+
+## Data split - Training & Testing Sets
+In the final model, the data was split with a ratio of 75:25.
+
+## Final Model Accuracy Score 
+The accuracy score of the model was -6.23 was did not show a positive relationship between the independent variables to the dependent variables. Therefore, we conclude that our model was not successful in answering our question of being able to predict the growth of the next wildfire.
 
 
 ## Project Planning
