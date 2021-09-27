@@ -74,3 +74,4 @@ Description:
 The way that our team has agreed to communicate is by utilizing Slack as the base of our communication (ex. need any immediate help, quick question, clarification on a topic, conduct a quick virtual call, etc.). We also agreed to conduct virtual meetings on designated days and times in order to ensure everyone is on the same page, and everyone remains on the same page. 
 
 ## Google Slides Presentation Link
+https://docs.google.com/presentation/d/117F7IS3yFacNfmIY9zos-4fqOf8Ne2q4_9VZze44nqo/view#slide=id.g1f87997393_0_782
