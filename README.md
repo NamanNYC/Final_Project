@@ -8,7 +8,7 @@
 ![Dashboard 3]()
 
 ## Link to Dashboard: 
-[Dashboard](https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/e486ff10-7faa-4c32-8285-0feec9267c87/views/fc87dae1-309c-49a9-864e-57f07f6ddf0c)
+[Dashboard](https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/a0399e3d-ce96-4d67-a611-0dd38ff32d83/views/0909b969-b1f9-4455-a463-17285afb95e1)
 
 ## Reason for our topic:
 The reason for our choice of Predicting Forest Fires was due to many cases of forest fires occurring that show up in the news, specifically in the Alberta province. We came to an agreement on this topic by utilizing the online collabortive service called Miro to research different topics, what data is available for those topics and ultimately vote on a topic that we all mutually agreed to be the best topic to work with, which concluded in us choosing to predict forest fires in Alberta. 
