@@ -3,9 +3,8 @@
 
 ## Dashboard:
 
-![Dashboard 1]()
-![Dashboard 2]()
-![Dashboard 3]()
+![Dashboard 1](https://github.com/NamanNYC/Final_Project/blob/main/Images/data%20viz%201.PNG)
+![Dashboard 2](https://github.com/NamanNYC/Final_Project/blob/main/Images/data%20viz%202.PNG)
 
 ## Link to Dashboard: 
 [Dashboard](https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/a0399e3d-ce96-4d67-a611-0dd38ff32d83/views/0909b969-b1f9-4455-a463-17285afb95e1)
