@@ -1,10 +1,11 @@
 # Final_Project - Predicting Forest Fires
 ![Planning-for-wildfires-in-Alberta](https://user-images.githubusercontent.com/81877387/134839166-811be96c-c391-43e1-9e17-f7eeb712fa40.gif)
 
-## Dashboard:
+## Dashboard/Visualization:
 
 ![Dashboard 1](https://github.com/NamanNYC/Final_Project/blob/main/Images/data%20viz%201.PNG)
 ![Dashboard 2](https://github.com/NamanNYC/Final_Project/blob/main/Images/data%20viz%202.PNG)
+![Web](![Dashboard 2](https://github.com/NamanNYC/Final_Project/blob/main/Images/data%20viz%202.PNG))
 
 ## Link to Dashboard: 
 [Dashboard](https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/a0399e3d-ce96-4d67-a611-0dd38ff32d83/views/0909b969-b1f9-4455-a463-17285afb95e1)
