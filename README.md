@@ -3,12 +3,12 @@
 
 ## Dashboard:
 
-![Dashboard 1](https://github.com/NamanNYC/Final_Project/blob/main/Images/Data%20images%20dashboard%201.PNG)
-![Dashboard 2](https://github.com/NamanNYC/Final_Project/blob/main/Images/Data%20images%20dashboard%202.PNG)
-![Dashboard 3](https://github.com/NamanNYC/Final_Project/blob/main/Images/machine%20learning%20images.PNG)
+![Dashboard 1]()
+![Dashboard 2]()
+![Dashboard 3]()
 
 ## Link to Dashboard: 
-[Dashboard](https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/eddcfed8-301d-40d1-817e-d3aa33a90445/views/24b39aca-d7c0-4c9c-af29-814df78f38ed)
+[Dashboard](https://us-east-1.quicksight.aws.amazon.com/sn/dashboards/e486ff10-7faa-4c32-8285-0feec9267c87/views/fc87dae1-309c-49a9-864e-57f07f6ddf0c)
 
 ## Reason for our topic:
 The reason for our choice of Predicting Forest Fires was due to many cases of forest fires occurring that show up in the news, specifically in the Alberta province. We came to an agreement on this topic by utilizing the online collabortive service called Miro to research different topics, what data is available for those topics and ultimately vote on a topic that we all mutually agreed to be the best topic to work with, which concluded in us choosing to predict forest fires in Alberta. 
